@@ -1,1 +1,1 @@
-**Jangan disalin full kalo cuma mau liat contoh**
+**Jangan disalin full juga co**
