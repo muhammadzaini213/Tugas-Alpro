@@ -1,0 +1,1 @@
+print(f"\033[34m-----------------------------Selamat datang di rogram penerjemah protein-----------------------------")
