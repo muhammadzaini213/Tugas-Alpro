@@ -19,4 +19,4 @@ elif (D > 0):
  print(pengantar_hasil, "dua akar, yaitu  X1 = (-b+D^0.5)/2*a dan X2 = (-b-D^0.5)/2*a), yang menghasilkan")
  print("X1 =", (-b+D**0.5)/2*a, "dan", "X2 =", (-b-D**0.5)/2*a) 
 else:
- print("Error")
+ print("Error, anda memasukkan input yang salah")
