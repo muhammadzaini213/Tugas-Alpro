@@ -1,4 +1,4 @@
-for i in range (0,10):
+for i in range (0,7):
     print(i)
     
 # break menghentikan pengulangan
