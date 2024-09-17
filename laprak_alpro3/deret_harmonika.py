@@ -3,10 +3,13 @@ penjabaran = ""
 total = 0
 
 for i in range(1, jumlah_deret+1):
-    total += i
+    total += 1/i
     if(i == jumlah_deret):
-        penjabaran = f"{penjabaran}{i}"
+        penjabaran = f"{penjabaran}1/{i}"
         break
-    penjabaran = f"{penjabaran}{i} + "
+    elif(i == 1):
+        penjabaran = f"{penjabaran}1 + "
+        continue
+    penjabaran = f"{penjabaran}1/{i} + "
     
-print(penjabaran, total)
+print(f"{penjabaran} = {total}")
