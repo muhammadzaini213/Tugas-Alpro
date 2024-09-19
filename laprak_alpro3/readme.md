@@ -20,3 +20,5 @@ Pengulangan nilai i dari nilai input(x) hingga nol, disetiap pengulangan, string
         print(underscore*i)
     else:
         print(xxx*i)</code></pre>
+Pengulangan untuk soal a), batas awal akan menggunakan nilai dari x dan akan terus dikurangi dengan 1 sebelum diulangi.\n
+If dan else berfungsi untuk mengecek apakah bilangan tersebut habis dibagi dua atau tidak, jika genap akan menggunakan underscore (_) dan jika ganjil akan menggunakan (x)
