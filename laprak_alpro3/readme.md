@@ -19,7 +19,7 @@ underscore = "-"
 dot = ". "</code></pre>
 Baris ini berisi variabel string yang akan diulangi dalam output.
 
-<pre><code>print("\n")<code></pre>
+<pre><code>print("\n")</code></pre>
 Output yang satu ini berguna untuk menambahkan baris baru sehingga beberapa input tidak menyatu.
 
 <pre><code>for i in range(x, 0 , -1):
