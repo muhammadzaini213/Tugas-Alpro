@@ -1,3 +1,14 @@
+## cicilan_rumah.py
+
+<pre><code>harga_asal = int(input("Harga asal rumah: "))
+harga_jual = int(input("Harga jual rumah: "))
+waktu_perlima_tahun = int(input("Waktu cicilan: 5 tahun x ")) * 5</code><pre>
+Saat program dimulai, pengguna disuruh memasukkan input harga asal, harga jual, serta berapa lama rumah akan dicicil.
+
+<pre><code>for tahun in range (waktu_perlima_tahun, 0, -5):
+ print(f"Cicilan pertahun untuk {tahun} tahun adalah {harga_jual/tahun} per tahun")</code></pre
+Baris kode ini akan melakukan perulangan berapa cicilan yang akan pembeli bayar per tahun dan mengulanginya lagi untuk 5 tahun dibawahnya hingga cicilan 5 tahun.
+
 ## sarangheyo.py
 
 <pre><code>x = int(input("Masukkan nilai: "))</code></pre>
