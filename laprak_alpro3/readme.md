@@ -32,8 +32,21 @@ for i in range(1, x+1):
     if(i != x):
       angka_dari_besar = f"{angka_dari_kecil}\n{angka_dari_besar}"
     else:
-        print(angka_dari_besar)<code><pre>
+        print(angka_dari_besar)</code></pre>
 Pengulangan untuk soal c), variabel angka i dimulai dari angka 1 dan akan diloop hingga mencapai nilai input(x), variabel angka dari kecil akan menyimpan urutan angka dari yang terkecil, dan menambahkan angkanya setiap pengulangan.<br>
 Kemudian, angka dari besar menyusun urutan angka dari yang terbanyak dan berkurang sebanyak satu tiap pengulangan.
 
+<pre><code>for i in range(1, x+1):
+    print(xxx*i)
+    if(i == x):
+        break
 
+for i in range(x-1,0,-1):
+    print(xxx*i)
+    if(i == x):
+        break</code></pre>
+Pengulangan untuk soal d), for loop pertama akan mengeluarkan output x dari hanya satu x hingga xxxxx (sesuai dengan input). Kemudian, for loop kedua akan menyusun dari xxxx (sesuai urutan angka) hingga x saja.
+
+<pre><code>for i in range(x, 0 ,-1):
+    print(f"{dot*(i-1)}{i}")</code></pre>
+Pengulangan untuk soal e), mengulangi i dari nilai input(x) hingga nol dengan menguranginya dengan satu tiap pengulangan, for loop ini akan menyusun dot ( . ) hingga nilai i dikurangi satu, serta nilai i diletakkan setelah dot nya.
