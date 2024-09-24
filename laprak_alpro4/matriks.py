@@ -1,38 +1,43 @@
-print("Selamat datang di program matriks, silahkan masukkan bagian matriks mana yang ingin anda ubah")
+print("Buat matriks pertama: ")
+baris1 = int(input("Masukkan jumlah baris: "))
+kolom1 = int(input("Masukkan jumlah kolom: "))
+matriks1 = []
+for i in range(baris1):
+    baris_matriks = []
+    for j in range(kolom1):
+        nilai = int(input(f"Masukkan nilai untuk elemen ({i + 1}, {j + 1}): "))
+        baris_matriks.append(nilai)
+    matriks1.append(baris_matriks)
 
-list_matriks = [[0,2,3], [0,0,0], [0,0,0]]
+print("Matriks pertama yang telah dibuat:")
+for baris in matriks1:
+    print(baris)
 
-baris1 =""
-baris2 = ""
-baris3 = ""
+print("Buat matriks kedua: ")
+baris2 = int(input("Masukkan jumlah baris: "))
+kolom2 = int(input("Masukkan jumlah kolom: "))
+matriks2 = []
+for i in range(baris2):
+    baris_matriks = []
+    for j in range(kolom2):
+        nilai = int(input(f"Masukkan nilai untuk elemen ({i + 1}, {j + 1}): "))
+        baris_matriks.append(nilai)
+    matriks2.append(baris_matriks)
 
+print("Matriks kedua yang telah dibuat:")
+for baris in matriks2:
+    print(baris)
 
-for i in range (0,3):
-        baris1 = f"{baris1}{list_matriks[0]}"
-
-for i in range (0,3):
-        baris2 = f"{baris2}{list_matriks[1][i]} "
-
-for i in range (0,3):
-        baris3 = f"{baris3}{list_matriks[2][i]} "
-
-print (f"Matriks disimpan: \n{baris1}\n{baris2}\n{baris3}")
-
-
-
-print("Apakah anda ingin mengedit matriks?")
-
-option_menu = int(input("1. Edit\n2. Keluar\n>> "))
-
-if(option_menu == 1):
-    input_baris = int(input("Edit baris ke: ")) -1
-    input_kolom = int(input("Edit kolom ke: ")) -1
-
-    if(input_baris <= 0 or input_baris >= 2 or input_kolom <= 0 or input_kolom >= 2):
-        input_edit = int(input(f"Ganti baris ke {input_baris} dan kolom ke {input_kolom} dengan : "))
-    else:
-        print(("Anda memasukkan angka diluar batas matriks 3x3!"))
-
+if kolom1 != baris2:
+    print("Perkalian matriks tidak dapat dilakukan. Jumlah kolom matriks pertama harus sama dengan jumlah baris matriks kedua.")
+else:
+    hasil = [[0 for _ in range(kolom2)] for _ in range(baris1)]
     
-elif(option_menu == 2):
-    print("Terimakasih sudah menggunakan aplikasi matriks!")
+    for i in range(baris1):
+        for j in range(kolom2):
+            for k in range(kolom1):
+                hasil[i][j] += matriks1[i][k] * matriks2[k][j]
+
+    print("Hasil perkalian matriks:")
+    for baris in hasil:
+        print(baris)
