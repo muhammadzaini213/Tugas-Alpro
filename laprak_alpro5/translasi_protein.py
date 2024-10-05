@@ -1,8 +1,6 @@
-rna = input("Masukkan RNA: ") # Input awal untuk program
-length = len(rna) # variabel ini nyimpan panjang dari input yang kita masukkan
+rna = input("Masukkan RNA: ") 
+length = len(rna) 
 
-
-# Mengi
 kodon = []
 protein = []
 
