@@ -1,17 +1,13 @@
 rna = input("Masukkan RNA: ") 
 length = len(rna) 
-
 kodon = []
 protein = []
-
 tampilkan = True
-
 if(length % 3 != 0):
     print("RNA tidak dapat diterjemahkan!")
 else:
     for i in range(0, int(length/3)):
         kodon.append(rna[i*3 : (i*3 +3)])
-
     for j in range(0, len(kodon)):
         if(kodon[j] == "AUG"):
             protein.append("Methionime")
