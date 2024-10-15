@@ -1,9 +1,11 @@
+import sys
 import re
 
 # Tinggal tempel aja teks list disini
-text = '''
+text = ''
 
-'''
+for line in sys.stdin:
+    text += line.rstrip() + '\n'
 
 # Bagian ini tinggal edit sesuai prodi, angkatan, dan semester kalian
 kode_prodi = 11
