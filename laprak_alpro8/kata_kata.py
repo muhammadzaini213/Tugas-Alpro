@@ -8,15 +8,15 @@ list_kata = fileData.split()
 
 posisi_dan_kata = dict()
 
-for i in range (1, len(list_kata)):
-    posisi_dan_kata[i] = list_kata[i-1]
+for i in range (0, len(list_kata)):
+    posisi_dan_kata[i+1] = list_kata[i]
 
 
-file = open("file_baru", 'a')
+file = open("file_baru", 'w')
 
 for key,value in posisi_dan_kata.items():
-    file.write(f"{key-1}: {value}\n")
-    print(f"{key-1}: {value}")
+    file.write(f"{key}: {value}\n")
+    print(f"{key}: {value}")
 
 file.close()
 
