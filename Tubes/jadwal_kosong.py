@@ -55,7 +55,7 @@ def search_free_students(free_schedule_data, day, session, original_lines):
     return free_students_with_nim
 
 # Reading input from a file
-file_path = 'data_if.txt'  # Ensure this file exists in the same directory
+file_path = 'mahasiswa/data_if.txt'  # Ensure this file exists in the same directory
 with open(file_path, 'r', encoding='utf-8') as file:
     input_text = file.read()
 

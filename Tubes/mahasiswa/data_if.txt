@@ -78,7 +78,7 @@
 11241078	Rifat Arifaldo	L	Jumat, Sesi 3	C	Selasa, Sesi 2	I	Senin, Sesi 1	G	Selasa, Sesi 3	C	Rabu, Sesi 3	G	Rabu, Sesi 2	L	Rabu, Sesi 4	I	Jumat, Sesi 4	C	Selasa, Sesi 4	B	Jumat, Sesi 2
 11241079	Sebastian Paskahadi Budiman	M	Jumat, Sesi 3	A	Selasa, Sesi 2	F	Senin, Sesi 1	H	Selasa, Sesi 1	A	Rabu, Sesi 3	G	Rabu, Sesi 2	M	Jumat, Sesi 4	F	Senin, Sesi 4	A	Senin, Sesi 3	A	Kamis, Sesi 2 
 11241080	Sulthan Farizan Fawwaz	H	Jumat, Sesi 3	A	Selasa, Sesi 2	E	Senin, Sesi 1	H	Selasa, Sesi 1	B	Rabu, Sesi 3	D	Selasa, Sesi 4	H	Selasa, Sesi 3	E	Senin, Sesi 4	B	Rabu, Sesi 4	B	Jumat, Sesi 2
-11241081	Syahri Nasta’in	I	Jumat, Sesi 3	D	Kamis, Sesi 2	F	Senin, Sesi 1	E	Selasa, Sesi 3	C	Rabu, Sesi 3	F	Rabu, Sesi 2	I	Rabu, Sesi 1	F	Senin, Sesi 4	C	Selasa, Sesi 4	B	Jumat, Sesi 2
+11241081	Syahri NastaÃ¢â‚¬â„¢in	I	Jumat, Sesi 3	D	Kamis, Sesi 2	F	Senin, Sesi 1	E	Selasa, Sesi 3	C	Rabu, Sesi 3	F	Rabu, Sesi 2	I	Rabu, Sesi 1	F	Senin, Sesi 4	C	Selasa, Sesi 4	B	Jumat, Sesi 2
 11241082	Terrano Jazil Fadiatmoko	J	Jumat, Sesi 3	B	Selasa, Sesi 2	G	Senin, Sesi 1	G	Selasa, Sesi 3	A	Rabu, Sesi 3	E	Selasa, Sesi 4	J	Selasa, Sesi 1	G	Kamis, Sesi 4	A	Senin, Sesi 3	B	Jumat, Sesi 2
 11241083	Thisya Darmala	K	Jumat, Sesi 3	B	Selasa, Sesi 2	H	Senin, Sesi 1	F	Selasa, Sesi 3	B	Rabu, Sesi 3	F	Rabu, Sesi 2	K	Kamis, Sesi 1	H	Kamis, Sesi 4	B	Rabu, Sesi 4	A	Kamis, Sesi 2 
 11241084	Thopan Rahman Hakim	L	Jumat, Sesi 3	C	Selasa, Sesi 2	I	Senin, Sesi 1	G	Selasa, Sesi 3	A	Rabu, Sesi 3	G	Rabu, Sesi 2	L	Rabu, Sesi 4	I	Jumat, Sesi 4	A	Senin, Sesi 3	B	Jumat, Sesi 2
