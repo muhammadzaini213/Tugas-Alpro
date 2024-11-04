@@ -72,7 +72,7 @@ def search_free_students(free_schedule_data, day, session, original_lines):
     return free_students_with_nim
 
 # Reading data from the file
-file_path = 'data_fisika.txt'
+file_path = 'mahasiswa/dummiy.txt'
 with open(file_path, 'r', encoding='utf-8') as file:
     input_text = file.read()
 
