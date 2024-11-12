@@ -1,3 +1,49 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Jadwal Management")
+
+root.state('zoomed') 
+
+# Define button functions (add function logic if needed)
+def lihat_jadwal():
+    pass
+
+def jadwal_kosong():
+    pass
+
+def edit_jadwal():
+    pass
+
+def cek_list():
+    pass
+
+# Set a larger font for buttons
+button_font = ("Helvetica", 18)
+
+# Create a frame to hold the buttons and center it vertically
+frame = tk.Frame(root)
+frame.pack(expand=True)  # This centers the frame in the middle of the window
+
+# Create buttons with vertical layout
+button1 = tk.Button(frame, text="Lihat Jadwal", font=button_font, command=lihat_jadwal)
+button1.pack(fill=tk.X, pady=10, padx=50)
+
+button2 = tk.Button(frame, text="Jadwal Kosong", font=button_font, command=jadwal_kosong)
+button2.pack(fill=tk.X, pady=10, padx=50)
+
+button3 = tk.Button(frame, text="Edit Jadwal", font=button_font, command=edit_jadwal)
+button3.pack(fill=tk.X, pady=10, padx=50)
+
+button4 = tk.Button(frame, text="Cek List", font=button_font, command=cek_list)
+button4.pack(fill=tk.X, pady=10, padx=50)
+
+# Run the application
+root.mainloop()
+
+
+
+
 def fixFormat(path):
     dataMahasiswa = open(path, "r")
     data = dataMahasiswa.read()
