@@ -1,48 +1,5 @@
 import tkinter as tk
-
-root = tk.Tk()
-root.title("Jadwal Management")
-
-root.state('zoomed') 
-
-# Define button functions (add function logic if needed)
-def lihat_jadwal():
-    pass
-
-def jadwal_kosong():
-    pass
-
-def edit_jadwal():
-    pass
-
-def cek_list():
-    pass
-
-# Set a larger font for buttons
-button_font = ("Helvetica", 18)
-
-# Create a frame to hold the buttons and center it vertically
-frame = tk.Frame(root)
-frame.pack(expand=True)  # This centers the frame in the middle of the window
-
-# Create buttons with vertical layout
-button1 = tk.Button(frame, text="Lihat Jadwal", font=button_font, command=lihat_jadwal)
-button1.pack(fill=tk.X, pady=10, padx=50)
-
-button2 = tk.Button(frame, text="Jadwal Kosong", font=button_font, command=jadwal_kosong)
-button2.pack(fill=tk.X, pady=10, padx=50)
-
-button3 = tk.Button(frame, text="Edit Jadwal", font=button_font, command=edit_jadwal)
-button3.pack(fill=tk.X, pady=10, padx=50)
-
-button4 = tk.Button(frame, text="Cek List", font=button_font, command=cek_list)
-button4.pack(fill=tk.X, pady=10, padx=50)
-
-# Run the application
-root.mainloop()
-
-
-
+from tkinter import ttk
 
 def fixFormat(path):
     dataMahasiswa = open(path, "r")
@@ -85,22 +42,21 @@ def menuAwal(pil, listJadwal):
         print("1. Jadwal\n2. Edit Jadwal\n3. Cek List")
         menuAwal(input(""), listJadwal)
 
-path = "mahasiswa/data_if.txt"
-fixFormat(path)
-
-def jadwalNIM(listJadwal):
-    find = input("Cari NIM/Nama?")
+def jadwalNIM(listJadwal, text):
     found = False
+    listDitemukan=""
     for i in range (0, len(listJadwal), 2):
-        if (find.lower() in listJadwal[i].lower()):
-            print(f"{listJadwal[i]}")
+        if (text.lower() in listJadwal[i].lower()):
+            listDitemukan = f"\n{listDitemukan}{listJadwal[i]}\n"
             for j in range (0, len(listJadwal[i+1])):
                 if(listJadwal[i+1][j]):
                     print(listJadwal[i+1][j])
+                    listDitemukan = f"{listDitemukan}{listJadwal[i+1][j]}\n"
                     found = True
     if(found == False):
-        print("Tidak ditemukan.")
-    
+        return "Tidak ditemukan."
+    else:
+        return(listDitemukan)
 
 def jadwalKosong(listJadwal): 
     listJadwalKosong = []
@@ -209,55 +165,137 @@ def jadwalKosongSesi(jadwalKosong):
         if(order[2] in jadwalKosong[i]):
             print(jadwalKosong[i-1])
 
-with open(path, 'r') as file:
-    line = lining(file)
-    matkul = listMatkul(line)
 
-    listJadwal = []
-    for mahasiswa in range (1, len(line)):
-        column = splitColumn(line[mahasiswa])
-        nim = column[0]
-        nama = column[1]
-        
-        matkulDanKelas = []
-        listSesi = []
+listJadwal = []
 
-        for sesi in range(3, len(column), 2):
-            listSesi.append(column[sesi])
+def openData(path):
+    fixFormat(path)
 
-        for mataKuliah in range (0, len(listSesi)):
-            listSesi[mataKuliah] = f"{listSesi[mataKuliah]} {matkul[mataKuliah][:-10]}"
+    with open(path, 'r') as file:
+        line = lining(file)
+        matkul = listMatkul(line)
 
-        listKelas = []
+        listJadwal.clear()
+        for mahasiswa in range (1, len(line)):
+            column = splitColumn(line[mahasiswa])
+            nim = column[0]
+            nama = column[1]
+            
+            matkulDanKelas = []
+            listSesi = []
 
-        for kelas in range (2, len(column), 2):
-            listKelas.append(column[kelas])
-        
-        
-        for matkulKelas in range (0, len(listSesi)):
-            matkulDanKelas.append(f"{listSesi[matkulKelas]}{listKelas[matkulKelas]}")
+            for sesi in range(3, len(column), 2):
+                listSesi.append(column[sesi])
 
-        matkulDanKelas = sorting(matkulDanKelas)
-        listJadwal.append(f"{nama} - {nim}")
-        listJadwal.append(matkulDanKelas)
+            for mataKuliah in range (0, len(listSesi)):
+                listSesi[mataKuliah] = f"{listSesi[mataKuliah]} {matkul[mataKuliah][:-10]}"
 
-    # print("1. Jadwal\n2. Edit Jadwal\n3. Cek List")
-    # menuAwal(input(""), listJadwal)
-    jadwalKosong(listJadwal)
-    # for i in range (0, len(listJadwal), 2):
-    #     print(listJadwal[i])
-    #     for j in range (0, len(listJadwal[i+1])):
-    #         print(listJadwal[i+1][j])
-    #     print("\n")
+            listKelas = []
+
+            for kelas in range (2, len(column), 2):
+                listKelas.append(column[kelas])
+            
+            
+            for matkulKelas in range (0, len(listSesi)):
+                matkulDanKelas.append(f"{listSesi[matkulKelas]}{listKelas[matkulKelas]}")
+
+            matkulDanKelas = sorting(matkulDanKelas)
+            listJadwal.append(f"{nama} - {nim}")
+            listJadwal.append(matkulDanKelas)
 
 
+openData("mahasiswa/fisika.txt")
 
-    
+# Initialize the main application window
+root = tk.Tk()
+root.title("Jadwal Management")
+root.state('zoomed')  # Maximize window but keep title bar
+
+# Define a function to log input text each time a key is released
+def search_input(event):
+    input_value = input_text.get()
+    # jadwalNIM(listJadwal, input_value)
+    response_label.config(text=jadwalNIM(listJadwal, input_value))  # Update label with search result
 
 
-        
+# Define the function to show the "Lihat Jadwal" form
+def show_lihat_jadwal():
+    button_frame.pack_forget()  # Hide the button frame
+    input_frame.pack(expand=True)  # Show the input frame
+
+# Define the function to return to the main button layout (optional)
+def back_to_menu():
+    input_frame.pack_forget()  # Hide the input frame
+    button_frame.pack(expand=True)  # Show the button frame
 
 
 
+# Set font for buttons and labels
+button_font = ("Helvetica", 18)
+label_font = ("Helvetica", 16)
+
+# Create a frame to hold the buttons and center it vertically
+button_frame = tk.Frame(root)
+button_frame.pack(expand=True)
+
+# Create the main buttons
+button1 = tk.Button(button_frame, text="Lihat Jadwal", font=button_font, command=show_lihat_jadwal)
+button1.pack(fill=tk.X, pady=10, padx=50)
+
+button2 = tk.Button(button_frame, text="Jadwal Kosong", font=button_font, command=lambda: print("Jadwal Kosong"))
+button2.pack(fill=tk.X, pady=10, padx=50)
+
+button3 = tk.Button(button_frame, text="Edit Jadwal", font=button_font, command=lambda: print("Edit Jadwal"))
+button3.pack(fill=tk.X, pady=10, padx=50)
+
+button4 = tk.Button(button_frame, text="Cek List", font=button_font, command=lambda: print("Cek List"))
+button4.pack(fill=tk.X, pady=10, padx=50)
+
+# Create the "Lihat Jadwal" input frame
+input_frame = tk.Frame(root)
+
+# Input field and label for the "Lihat Jadwal" form
+input_label = tk.Label(input_frame, text="Masukkan Jadwal:", font=label_font)
+input_label.pack(pady=(20, 10))
+
+input_dropdown_frame = tk.Frame(input_frame)
+input_dropdown_frame.pack(pady=(0, 20), padx=50, fill=tk.X)
+
+prodi_combobox = ttk.Combobox(input_dropdown_frame, font=label_font, state="readonly")
+prodi_combobox['values'] = ["Fisika", "Matematika", "Teknik Mesin", "Teknik Elektro", "Teknik Kimia", "Teknik Material dan Metalurgi", "Teknik Sipil", "Perencanaan Wilayah dan Kota", "Teknik Perkapalan", "Sistem Informasi", "Informatika", "Teknik Industri", "Teknik Lingkungan", "Teknik Kelautan", "Arsitektur", "Statistika", "Ilmu Aktuaria", "Rekayasa Keselamatan", "Teknologi Pangan", "Bisnis Digital", "Teknik Logistik", "Desain Komunikasi Visual"]  # Dropdown options
+prodi_combobox.set("Pilih Prodi")  # Default text
+prodi_combobox.pack(side=tk.LEFT, padx=(10, 0))
+
+def on_prodi_changed(event):
+    selected_prodi = prodi_combobox.get()
+    openData(f"mahasiswa/{selected_prodi.lower()}.txt")
+    # Update label or perform any other task based on the selection
+
+# Bind the event to detect when the Prodi selection changes
+prodi_combobox.bind("<<ComboboxSelected>>", on_prodi_changed)
+
+input_text = tk.Entry(input_frame, font=label_font)
+input_text.pack(pady=(0, 20), padx=50, fill=tk.X)
+
+# Bind the search_input function to the Entry widget for dynamic logging
+input_text.bind("<KeyRelease>", search_input)
+
+response_label = tk.Label(input_frame, text="Hasil pencarian akan ditampilkan di sini", font=label_font)
+response_label.pack(pady=10)
+
+# Create a frame to hold both "Kembali" and "Search" buttons horizontally
+button_frame_bottom = tk.Frame(input_frame)
+button_frame_bottom.pack(pady=(20, 10))
+
+# "Kembali" button to return to the main menu
+back_button = tk.Button(button_frame_bottom, text="Kembali", font=button_font, command=back_to_menu)
+back_button.pack(side=tk.LEFT, padx=(0, 10))
+
+# "Search" button to perform search action
+# search_button = tk.Button(button_frame_bottom, text="Search", font=button_font, command=search_action)
+# search_button.pack(side=tk.LEFT)
+
+# Run the application
+root.mainloop()
         
         
